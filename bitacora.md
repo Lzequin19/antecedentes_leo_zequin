@@ -8,6 +8,29 @@ La destila el cerebro con `/destilar`.
 
 ---
 
+## 2026-11-17 — Firma de correo minimalista (Gmail + Outlook)
+
+**Qué se hizo**
+- Nueva firma de correo personal para lzequin@gmail.com y lzequin@outlook.com, que reemplaza a la vieja (nombre, título, celular, "Más información...").
+- Página `firma/firma-email.html` con las dos versiones (cambia solo el mail), botón "Copiar firma" (HTML enriquecido con fallback por selección) y los pasos para pegarla en cada cliente.
+- Contenido final, línea por línea: Leonardo Zequin / Magíster en Docencia Universitaria / Ingeniero Industrial / +54 9 342 537-7879 · mail / LinkedIn · Antecedentes · Somos Zeta.
+- Revisada renderizada en Chrome (con `server.js`). No se probó pegándola en Gmail ni en Outlook.
+
+**Decisiones**
+- Minimalista y solo con texto, sin íconos ni imágenes: las imágenes en firmas se bloquean o llegan como adjunto, y en Gmail tienen que estar alojadas en la web.
+- Compatible con clientes de correo: tablas anidadas, estilos en línea, Arial. Paleta de la página: barra izquierda violeta `#7030a0`, separadores dorados `#d9a400`.
+- Teléfono en formato internacional (`+54 9 342 537-7879`): con +54 se saca el 0 y el 15 y se agrega el 9. El número abre WhatsApp (`wa.me/5493425377879`).
+- El link "Antecedentes" apunta a GitHub Pages: `https://lzequin19.github.io/antecedentes_leo_zequin/` (verificado online, 200).
+- Ajustes de Leo: cada título en su propia línea, primero el Magíster y después Ingeniero Industrial, sin espacio extra antes de la línea de contacto (`padding:2px`). El primer intento de sacar el espacio lo pisó un cambio externo en el archivo; al reaplicarlo quedó guardado.
+- Ojo: el WhatsApp de la página (`build.js`, 3496 460513) no coincide con el celular de la firma (342 537-7879).
+
+**Pendientes / próximo paso**
+- Leo: pegar la firma en Gmail y en Outlook y fijarla como predeterminada.
+- Decidir si `firma/` se commitea: si se sube, queda publicada en GitHub Pages junto a la página.
+- Revisar si el WhatsApp de la página tiene que pasar a ser el 342 537-7879.
+
+**Archivos / áreas tocadas:** `firma/firma-email.html` (nuevo, sin commitear).
+
 ## 2026-07-19 — Sesión sin actividad de desarrollo
 
 **Qué se hizo**
